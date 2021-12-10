@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addSmurfs, errorMessage } from "../actions";
+import { addSmurfs, errorMessage } from "../actions/index";
 import { connect } from "react-redux";
 
 const AddForm = (props) => {
@@ -81,7 +81,7 @@ const AddForm = (props) => {
             Error: {errorMessage}
           </div>
         )}
-        <button onClick={handleSubmit}>Submit Smurf</button>
+        <button>Submit Smurf</button>
       </form>
     </section>
   );
