@@ -10,8 +10,6 @@ const AddForm = (props) => {
     description: "",
   });
 
-  const errorMessage = state.errorMessage;
-
   const handleChange = (e) => {
     setState({
       ...state,
@@ -27,6 +25,8 @@ const AddForm = (props) => {
       props.addSmurfs(state);
     }
   };
+
+  const errorMessage = state.errorMessage;
 
   return (
     <section>
