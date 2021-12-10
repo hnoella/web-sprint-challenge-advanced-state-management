@@ -72,13 +72,13 @@ const AddForm = (props) => {
             id="description"
           />
         </div>
-        {errorMessage && (
+        {props.error && (
           <div
             data-testid="errorAlert"
             className="alert alert-danger"
             role="alert"
           >
-            Error: {errorMessage}
+            Error: {props.error}
           </div>
         )}
         <button>Submit Smurf</button>
@@ -87,7 +87,12 @@ const AddForm = (props) => {
   );
 };
 
-export default connect(null, { addSmurfs, errorMessage })(AddForm);
+const mapStateToProps = (state) => {
+  return {
+    error: state.error,
+  };
+};
+export default connect(mapStateToProps, { addSmurfs, errorMessage })(AddForm);
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
